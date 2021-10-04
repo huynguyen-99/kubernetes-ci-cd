@@ -96,7 +96,7 @@ metadata:
  name: puzzle
 spec:
   rules:
-  - host: puzzle.192.168.99.100.xip.io
+  - host: puzzle.10.168.0.6.xip.io
     http:
       paths:
       - path: /

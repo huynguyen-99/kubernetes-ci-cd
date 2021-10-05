@@ -35,12 +35,12 @@ automountServiceAccountToken: true
 
 ---
 
-apiVersion: rbac.authorization.k8s.io/v1
+apiVersion: apps/v1
 kind: ClusterRoleBinding
 metadata:
   name: Jenkins-cluster-admin
 roleRef:
-  apiGroup: rbac.authorization.k8s.io
+  apiGroup: app/v1
   kind: ClusterRole
   name: cluster-admin
 subjects:

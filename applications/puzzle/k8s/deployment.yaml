@@ -57,6 +57,7 @@ spec:
   selector:
     matchLabels:
       app: mongo
+      tier: mongo
   strategy:
     type: Recreate
   template:

@@ -36,7 +36,6 @@ spec:
       containers:
       - image: 127.0.0.1:30400/kr8sswordz:$BUILD_TAG
         name: kr8sswordz
-        imagePullPolicy: Always
         ports:
         - containerPort: 3002
           name: kr8sswordz
@@ -47,7 +46,7 @@ metadata:
  name: kr8sswordz
 spec:
   rules:
-  - host: kr8sswordz.192.168.99.100.xip.io
+  - host: kr8sswordz.10.168.0.6.xip.io
     http:
       paths:
       - path: /

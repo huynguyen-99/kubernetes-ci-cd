@@ -20,7 +20,7 @@ node {
         sh "docker build -t ${imageName} applications/kr8sswordz-pages"
 
     stage "Change Tag"
-        sh "docker tag ${imageName} ${imageNamev1"   
+        sh "docker tag ${imageName} ${imageNamev1}"   
 
     stage "Push"
 

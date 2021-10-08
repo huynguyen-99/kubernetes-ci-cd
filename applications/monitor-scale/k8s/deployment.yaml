@@ -60,7 +60,7 @@ metadata:
   ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: 
+  - host: / 
     http:
       paths:
       - path: /

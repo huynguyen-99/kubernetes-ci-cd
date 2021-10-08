@@ -11,7 +11,7 @@ spinnaker:
 
 services:
   deck:
-    baseUrl: http://spinnaker.192.168.42.74.xip.io
+    baseUrl: http://spinnaker.10.148.0.6.xip.io
     auth:
       enabled: false
   orca:
@@ -179,7 +179,7 @@ spring:
 #   clouddriver:
 #     baseUrl: http://clouddriver:7002
 #   deck:
-#     baseUrl: http://deck.192.168.42.74.xip.io
+#     baseUrl: http://deck.10.148.0.6.xip.io
 #   front50:
 #     baseUrl: http://front50:8080
 #   orca:

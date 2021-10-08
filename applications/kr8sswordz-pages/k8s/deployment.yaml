@@ -46,7 +46,7 @@ metadata:
  name: kr8sswordz
 spec:
   rules:
-  - host: / 
+  - host: kr8sswordz.10.148.0.6.xip.io 
     http:
       paths:
       - path: /

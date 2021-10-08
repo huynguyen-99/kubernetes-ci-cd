@@ -60,7 +60,7 @@ metadata:
   ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: monitor-scale.192.168.99.100.xip.io
+  - host: monitor-scale.10.148.0.6.xip.io
     http:
       paths:
       - path: /

@@ -88,7 +88,7 @@ metadata:
  name: puzzle
 spec:
   rules:
-  - host: puzzle.35.247.133.21.xip.io
+  - host:
     http:
       paths:
       - path: /

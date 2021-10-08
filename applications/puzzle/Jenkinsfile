@@ -28,8 +28,8 @@ node {
 
     stage "Deploy"
         
-        sh "kubectl delete deploy puzzle"
-        sh "kubectl delete service puzzle"
+
+
 
         sh "sed 's#__IMAGE__#'$BUILDIMG'#' applications/puzzle/k8s/deployment.yaml | kubectl apply -f -"
 }

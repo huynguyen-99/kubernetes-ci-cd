@@ -45,7 +45,7 @@ spec:
   selector:
     app: puzzle
     tier: puzzle
-  type: NodePort
+  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -95,7 +95,7 @@ metadata:
  name: puzzle
 spec:
   rules:
-  - host: puzzle.35.247.133.21.xip.io
+  - host: puzzle.10.148.0.6.xip.io
     http:
       paths:
       - path: /

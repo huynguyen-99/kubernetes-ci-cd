@@ -41,6 +41,7 @@ module.exports = function(Crossword) {
         
         // Part 4: Uncomment the next line to enable puzzle pod highlighting when clicking the Submit button
         //fireHit();
+        fireHit();
         if (err) handleError(err.message, cb);
         for (var j = 0; j < words.length; j++) {
           var word = words[j];
@@ -50,6 +51,7 @@ module.exports = function(Crossword) {
             if (crosswordWord.wordNbr === word.wordNbr && crosswordWord.wordOrientation === word.wordOrientation) {
               crosswordWord.enteredValue = word.enteredValue;
               //crosswordWord.wordOrientation = word.wordOrientation;
+              crosswordWord.wordOrientation = word.wordOrientation;
             }
             updatedWords.push(crosswordWord);
           }

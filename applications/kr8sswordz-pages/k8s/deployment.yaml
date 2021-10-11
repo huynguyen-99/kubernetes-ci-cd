@@ -34,7 +34,7 @@ spec:
         tier: kr8sswordz
     spec:
       containers:
-      - image: 127.0.0.1:30400/kr8sswordz:latest
+      - image: 127.0.0.1:30400/kr8sswordz:$BUILD_TAG
         name: kr8sswordz
         ports:
         - containerPort: 3002
@@ -46,7 +46,7 @@ metadata:
  name: kr8sswordz
 spec:
   rules:
-  - host: kr8sswordz.10.148.0.6.xip.io 
+  - host: kr8sswordz.35.247.133.21.xip.io 
     http:
       paths:
       - path: /

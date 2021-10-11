@@ -17,9 +17,16 @@ spec:
         tier: puzzle
     spec:
       containers:
-      - image: 127.0.0.1:30400/puzzle:latest
+      - image: 127.0.0.1:30400/puzzle:$BUILD_TAG
         name: puzzle
         imagePullPolicy: Always
+        lifecycle:
+          postStart:
+            exec:
+              command: ["/up.sh"]
+          preStop:
+            exec:
+              command: ["/down.sh"]
         ports:
         - containerPort: 3000
           name: puzzle
@@ -82,13 +89,13 @@ spec:
     tier: mongo
   type: NodePort
 ---
-apiVersion: networking.k8s.io/v1
+apiVersion: networking.k8s.io/v1  
 kind: Ingress
 metadata:
  name: puzzle
 spec:
   rules:
-  - host: puzzle.10.148.0.6.xip.io
+  - host: puzzle.35.247.133.21.xip.io
     http:
       paths:
       - path: /

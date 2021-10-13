@@ -71,3 +71,17 @@ spec:
             name: monitor-scale
             port:
               number: 3001
+      - path: /socket.i
+        pathType: Prefix
+        backend:
+          service:
+            name: monitor-scale
+            port:
+              number: 3001
+       - path: /pods
+        pathType: Prefix
+        backend:
+          service:
+            name: monitor-scale
+            port:
+              number: 3001

@@ -52,7 +52,7 @@ spec:
   - host: kr8sswordz.10.148.0.6.xip.io 
     http:
       paths:
-      - path: /
+      - path: /pods
         pathType: Prefix
         backend:
           service:

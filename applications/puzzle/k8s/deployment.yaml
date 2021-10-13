@@ -99,7 +99,7 @@ metadata:
   nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: puzzle.10.148.0.6.xip.io
+  - host: 35.247.133.21
     http:
       paths:
       - path: /

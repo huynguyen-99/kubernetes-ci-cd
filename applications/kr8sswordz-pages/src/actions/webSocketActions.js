@@ -7,6 +7,7 @@ const socket = io(baseUrl);
 
 export function getPods () {
   return dispatch => {
+    console.log(`${baseUrl}/pods`)
     return fetch(`${baseUrl}/pods`)
       .then(resp => (
         resp.json()

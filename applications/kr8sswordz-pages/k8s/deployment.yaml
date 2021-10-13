@@ -6,7 +6,8 @@ metadata:
     app: kr8sswordz
 spec:
   ports:
-    - port: 80
+    - protocol: TCP
+      port: 80
       targetPort: 3002
   selector:
     app: kr8sswordz

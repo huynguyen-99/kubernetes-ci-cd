@@ -40,12 +40,13 @@ metadata:
     app: puzzle
 spec:
   ports:
-    - port: 3000
+    - protocol: TCP
+      port: 3000
       targetPort: 3000
   selector:
     app: puzzle
     tier: puzzle
-  type: LoadBalancer
+  type: NodePort
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -82,7 +83,8 @@ metadata:
     app: mongo
 spec:
   ports:
-    - port: 27017
+    - protocol: TCP
+      port: 27017
       targetPort: 27017
   selector:
     app: mongo

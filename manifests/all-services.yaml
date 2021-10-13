@@ -6,7 +6,8 @@ metadata:
     app: monitor-scale
 spec:
   ports:
-    - port: 3001
+    - protocol: TCP
+      port: 3001
       targetPort: 3001
   selector:
     app: monitor-scale
@@ -21,7 +22,8 @@ metadata:
     app: puzzle
 spec:
   ports:
-    - port: 3000
+    - protocol: TCP
+      port: 3000
       targetPort: 3000
   selector:
     app: puzzle
@@ -36,7 +38,8 @@ metadata:
     app: kr8sswordz
 spec:
   ports:
-    - port: 80
+    - protocol: TCP
+      port: 80
       targetPort: 3002
   selector:
     app: kr8sswordz

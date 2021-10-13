@@ -109,3 +109,10 @@ spec:
             name: puzzle
             port:
               number: 3000
+      - path: /puzzle/v1/crossword/
+        pathType: Prefix
+        backend:
+          service:
+            name: puzzle
+            port:
+              number: 3001

@@ -102,7 +102,7 @@ spec:
   - host: puzzle.10.148.0.6.xip.io
     http:
       paths:
-      - path: /pods
+      - path: /
         pathType: Prefix
         backend:
           service:

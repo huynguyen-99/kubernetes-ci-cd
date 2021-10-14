@@ -59,6 +59,7 @@ metadata:
   name: monitor-scale
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
+    ingress.kubernetes.io/enable-cors: "true"
 spec:
   rules:
   - host: monitor-scale.10.148.0.6.xip.io 

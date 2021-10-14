@@ -46,14 +46,18 @@ kind: Ingress
 metadata:
   name: kr8sswordz
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/configuration-snippet: more_set_headers "Access-Control-Allow-Origin: $http_origin";
+    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+    nginx.ingress.kubernetes.io/cors-allow-methods: PUT, GET, POST, OPTIONS, DELETE, PATCH
+    nginx.ingress.kubernetes.io/enable-cors: "true"  
 spec:
   rules:
   - host: kr8sswordz.10.148.0.6.xip.io 
     http:
       paths:
-      - path: /pods
+      - path: /.*
         pathType: Prefix
         backend:
           service:

@@ -27,8 +27,6 @@ node {
         sh "docker push ${imageNamev1}"
 
     stage "Deploy"
-        sh "kubectl delete deploy kr8sswordz"
-        sh "kubectl delete service kr8sswordz"
 
         sh "sed 's#__IMAGE__#'$BUILDIMG'#' applications/kr8sswordz-pages/k8s/deployment.yaml | kubectl apply -f -"
 }

@@ -16,20 +16,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
-try {
-  etcd = new Etcd("http://example-etcd-cluster-client-service:2379");
-  etcd.mkdirSync('pod-list');
+etcd = new Etcd("http://example-etcd-cluster-client-service:2379");
+etcd.mkdirSync('pod-list');
 
-  var watcher = etcd.watcher("pod-list", null, {recursive: true});
+var watcher = etcd.watcher("pod-list", null, {recursive: true});
 
-  watcher.on("change", function(val) {
-    var podChange = { pods: val.node.key, action: val.action };
-    console.log(JSON.stringify(podChange));
-    io.emit('pods', podChange);
-  });  
-} catch (error) {
-  console.log(error)
-}
+watcher.on("change", function(val) {
+  var podChange = { pods: val.node.key, action: val.action };
+  console.log(JSON.stringify(podChange));
+  io.emit('pods', podChange);
+});
 
 app.post('/scale', function (req, res) {
   var scale = req.body.count;

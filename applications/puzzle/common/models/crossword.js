@@ -4,7 +4,7 @@ var Etcd = require('node-etcd')
 
 module.exports = function(Crossword) {
 
-  var etcd = new Etcd("http://etcd.default.svc.cluster.local:2379");
+  var etcd = new Etcd("http://etcd:2379");
   fireHit();
   Crossword.get = function(cb) {
     

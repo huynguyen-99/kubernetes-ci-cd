@@ -60,11 +60,8 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/enable-cors: "true"
-    ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  backend:
-    serviceName: monitor-scale
-    servicePort: 3001
   rules:
   - host: monitor-scale.10.148.0.6.xip.io
     http:

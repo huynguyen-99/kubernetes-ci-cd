@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: example-etcd-cluster-client-service
+  name: etcd.default.svc.cluster.local
 spec:
   selector:
     etcd_cluster: example-etcd-cluster

@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 try {
-  etcd = new Etcd("http://etcd:2379");
+  etcd = new Etcd("http://example-etcd-cluster-client-service:2379");
   etcd.mkdirSync('pod-list');
 
   var watcher = etcd.watcher("pod-list", null, {recursive: true});

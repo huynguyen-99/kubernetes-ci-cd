@@ -59,13 +59,12 @@ metadata:
   name: monitor-scale
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      more_set_headers "Access-Control-Allow-Origin: $http_origin";
-    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/cors-allow-methods: PUT, GET, POST, OPTIONS, DELETE, PATCH
     nginx.ingress.kubernetes.io/enable-cors: "true"
+    ingress.kubernetes.io/rewrite-target: /
 spec:
+  backend:
+    serviceName: monitor-scale
+    servicePort: 3001
   rules:
   - host: monitor-scale.10.148.0.6.xip.io
     http:

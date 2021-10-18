@@ -59,7 +59,7 @@ app.post('/loadtest/concurrent', function (req, res) {
 
   var count = req.body.count;
   console.log('Count requested is: %s', count);
-  var url = "http://puzzle:3000/puzzle/v1/crossword";
+  var url = "http://172.17.0.13:3000/puzzle/v1/crossword";
   var myUrls = [];
   for (var i = 0; i < req.body.count; i++) {
     myUrls.push(url);

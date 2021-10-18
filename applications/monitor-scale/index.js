@@ -16,12 +16,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
-etcd = new Etcd("http://etcd:2379");
+etcd = new Etcd("http://example-etcd-cluster-client-service:2379");
 etcd.mkdirSync('pod-list');
 
 var watcher = etcd.watcher("pod-list", null, {recursive: true});
-watcher.on("change", function(val) {
 
+watcher.on("change", function(val) {
   var podChange = { pods: val.node.key, action: val.action };
   console.log(JSON.stringify(podChange));
   io.emit('pods', podChange);
@@ -124,7 +124,10 @@ app.get('/hit/:podId', function (req, res) {
 });
 
 app.get('/pods', function (req, res) {
+  console.log(req)
+  console.log(etcd)
   var pods = etcd.getSync("pod-list",{ recursive: true });
+  console.log(pods)
   res.setHeader('Content-Type', 'application/json');
   res.send(JSON.stringify({pods: pods.body.node.nodes}));
 });

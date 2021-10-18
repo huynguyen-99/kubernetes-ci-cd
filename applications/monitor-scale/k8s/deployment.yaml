@@ -38,7 +38,7 @@ spec:
     spec:
       serviceAccountName: monitor-scale
       containers:
-      - image: 127.0.0.1:30400/monitor-scale:$BUILD_TAG
+      - image: 127.0.0.1:30400/monitor-scale:latest
         name: monitor-scale
         imagePullPolicy: Always
         ports:
@@ -59,12 +59,8 @@ metadata:
   name: monitor-scale
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      more_set_headers "Access-Control-Allow-Origin: $http_origin";
-    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/cors-allow-methods: PUT, GET, POST, OPTIONS, DELETE, PATCH
     nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - host: monitor-scale.10.148.0.6.xip.io

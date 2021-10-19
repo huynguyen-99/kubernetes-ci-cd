@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
-etcd = new Etcd("http://etcd:2379");
+etcd = new Etcd("http://10.105.113.219:2379");
 etcd.mkdirSync('pod-list');
 
 var watcher = etcd.watcher("pod-list", null, {recursive: true});

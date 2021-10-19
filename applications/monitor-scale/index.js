@@ -124,11 +124,12 @@ app.get('/hit/:podId', function (req, res) {
 });
 
 app.get('/pods', function (req, res) {
-  console.log(req)
-  console.log(etcd)
+  console.log("req", req)
+  console.log("etcd", etcd)
   var pods = etcd.getSync("pod-list",{ recursive: true });
-  console.log(pods)
+  console.log("pods", pods)
   res.setHeader('Content-Type', 'application/json');
+  console.log("res", res)
   res.send(JSON.stringify({pods: pods.body.node.nodes}));
 });
 

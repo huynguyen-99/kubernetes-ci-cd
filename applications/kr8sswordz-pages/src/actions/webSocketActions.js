@@ -8,19 +8,20 @@ const socket = io(baseUrl);
 export function getPods () {
   return dispatch => {
     console.log(`${baseUrl}/pods`)
-    return fetch(`${baseUrl}/pods`)
-      .then(resp => (
-        resp.json()
-      ))
-      .then(json => {
-        const pods = json.pods.map(pod => (
-          concatServiceName(pod.key)
-        ));
-        dispatch({type: types.websocket.GET_PODS, pods});
-      })
-      .catch(err => {
-        throw err;
-      });
+//     return fetch(`${baseUrl}/pods`)
+//       .then(resp => (
+//         resp.json()
+//       ))
+//       .then(json => {
+//         const pods = json.pods.map(pod => (
+//           concatServiceName(pod.key)
+//         ));
+//         dispatch({type: types.websocket.GET_PODS, pods});
+//       })
+//       .catch(err => {
+//         throw err;
+//       });
+       return 1;
   };
 }
 
